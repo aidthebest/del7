@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,6 +26,9 @@ public class DeliveryTest {
     @BeforeEach
     void setup() {
         open("http://localhost:9999");
+        Configuration.holdBrowserOpen = true;
+        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+        System.setProperty("selenide.browser", "Chrome");
     }
 
 
